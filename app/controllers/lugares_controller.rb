@@ -4,7 +4,11 @@ class LugaresController < ApplicationController
   # GET /lugares
   # GET /lugares.json
   def index
-    @lugares = Lugare.all
+    if params[:search]
+      @lugares = Lugare.search(params[:search]).order("created_at DESC").page(params[:page]).per(5)
+    else
+      @lugares = Lugare.order('created_at DESC').page(params[:page]).per(5)
+    end
   end
 
   # GET /lugares/1
