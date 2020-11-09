@@ -1,0 +1,81 @@
+<!--Header Start-->
+         <header class="header-style-2">
+            <nav class="navbar navbar-expand-lg">
+               <a class="navbar-brand" href="index-2.html"><img src="images/h2logo.png" alt=""></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i> </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item dropdown">
+                         <%= link_to 'Inicio', root_path, :class=>"nav-link" %>
+                     </li>
+                     <li class="nav-item"> <%= link_to 'Destinos', root_path, :class=>"nav-link" %> </li>
+                     
+                     <li class="nav-item dropdown">
+                        <%= link_to 'Nosotros', root_path, :class=>"nav-link" %>
+                     </li>
+                     
+
+                  <% if user_signed_in?  %>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                              <i class="fa fa-user mr-1"></i><%= current_user.email %>
+                        </a>
+                              
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                              aria-labelledby="navbarDropdownMenuLink-333">
+                              <%= link_to('Editar perfil', edit_user_registration_path,  :class=>"dropdown-item") %>
+                              <%= link_to('Panel de Administrador', root_path,  :class=>"dropdown-item") %>
+                        <div class="dropdown-divider"></div>
+                              <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete,  :class=>"dropdown-item") %>
+                        </div>
+                     </li>
+                  <% elsif user_signed_in? %>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                              <i class="fa fa-user mr-1"></i><%= current_user.email %>
+                        </a>
+                              
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                              aria-labelledby="navbarDropdownMenuLink-333">
+                              <%= link_to('Editar perfil', edit_user_registration_path,  :class=>"dropdown-item") %>
+                        
+                        <div class="dropdown-divider"></div>
+                              <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete,  :class=>"dropdown-item") %>
+                        </div>
+                     </li>
+                  <% else %>
+                     <li class="nav-item mt-2">
+                        <%= link_to 'Registrarse', new_user_registration_path , :class=>"btn btn-outline-success ml-2 mr-2 mb-n4 text-white"%>
+                     </li>
+                     <li class="nav-item mt-2">
+                        <%= link_to 'Iniciar Sesión', new_user_session_path , :class=>"btn btn-success ml-2 mr-2 mb-n4"%>
+                     </li>
+                  <% end %>
+                      
+                  </ul>
+                  <ul class="topnav-right">
+                     <li> <a class="mdonate" href="donation.html"><span>Make a Donation</span></a> </li>
+                     <li> <a class="search-icon" href="#search"> <i class="fas fa-search"></i> </a> </li>
+                     <li class="dropdown">
+                        <a class="cart-icon" href="#" role="button" id="cartdropdown" data-toggle="dropdown"> <i class="fas fa-shopping-cart"></i></a>
+                        <div class="dropdown-menu cart-box" aria-labelledby="cartdropdown">
+                           Recently added item(s)
+                           <ul class="list">
+                              <li class="item">
+                                 <a href="#" class="preview-image"><img class="preview" src="bthed/images/pro.jpg" alt=""></a>
+                                 <div class="description"> <a href="#">Sample Course</a> <strong class="price">1 x $44.95</strong> </div>
+                              </li>
+                              <li class="item">
+                                 <a href="#" class="preview-image"><img class="preview" src="bthed/images/pro.jpg" alt=""></a>
+                                 <div class="description"> <a href="#">Sample Course</a> <strong class="price">1 x $44.95</strong> </div>
+                              </li>
+                           </ul>
+                           <div class="total">Total: <strong>$44.95</strong></div>
+                           <div class="view-link"><a href="#">Proceed to Checkout</a> <a href="#">View cart </a></div>
+                        </div>
+                     </li>
+                     <li class="login-reg"> <a href="my-account.html">Login</a> | <a href="my-account.html">Signup</a> </li>
+                  </ul>
+               </div>
+            </nav>
+         </header>
