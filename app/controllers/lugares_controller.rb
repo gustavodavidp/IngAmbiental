@@ -1,6 +1,6 @@
 class LugaresController < ApplicationController
   before_action :set_lugare, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_admin_params!, only: [:new, :edit, :create, :update,  :destroy]
   # GET /lugares
   # GET /lugares.json
   def index
@@ -66,6 +66,11 @@ class LugaresController < ApplicationController
   end
 
   private
+    def require_admin_params!
+        unless current_user.admin == true
+            redirect_to root_path, status: 401
+        end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_lugare
       @lugare = Lugare.find(params[:id])
