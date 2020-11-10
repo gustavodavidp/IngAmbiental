@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contaminantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Nivel</th>
+      <th>Lugare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contaminantes.each do |contaminante| %>
+      <tr>
+        <td><%= contaminante.nombre %></td>
+        <td><%= contaminante.descripcion %></td>
+        <td><%= contaminante.nivel %></td>
+        <td><%= contaminante.lugare_id %></td>
+        <td><%= link_to 'Show', contaminante %></td>
+        <td><%= link_to 'Edit', edit_contaminante_path(contaminante) %></td>
+        <td><%= link_to 'Destroy', contaminante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contaminante', new_contaminante_path %>

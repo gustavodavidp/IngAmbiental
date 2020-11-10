@@ -1,18 +1,17 @@
 <h1>Lugares</h1>
 <div class="text-center">
-                <div class="form-group ml-5 mr-5 ">
-                    <div class="row d-flex justify-content-center">
-                        <%= form_tag(lugares_path, :method => "get", class: "mx-auto") do %>
-                                <div class="d-flex justify-content-center">
-                                    <h5 class="text-dark text-nowrap mr-3" >Haz tu Búsqueda:</h5>
-                                    <%= text_field_tag :search, params[:search], placeholder: "Buscar Destinos...",:id => "query", :class=>"form-control" %>
-                                    <%= submit_tag("Buscar", :class=>"btn btn-success text-wrap ml-2") %>
-                                </div>
-                                
-                        <% end %>
-                    </div>
-                </div>
-			</div>
+  <div class="form-group ml-5 mr-5 ">
+      <div class="row d-flex justify-content-center">
+          <%= form_tag(lugares_path, :method => "get", class: "mx-auto") do %>
+            <div class="d-flex justify-content-center">
+                <h5 class="text-dark text-nowrap mr-3" >Haz tu Búsqueda:</h5>
+                <%= text_field_tag :search, params[:search], placeholder: "Buscar Destinos...",:id => "query", :class=>"form-control" %>
+                <%= submit_tag("Buscar", :class=>"btn btn-success text-wrap ml-2") %>
+            </div>
+          <% end %>
+      </div>
+  </div>
+</div>
 <table>
   <thead>
     <tr>

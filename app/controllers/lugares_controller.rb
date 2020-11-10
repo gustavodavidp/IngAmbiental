@@ -78,6 +78,6 @@ class LugaresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lugare_params
-      params.require(:lugare).permit(:nombre, :descripcion)
+      params.require(:lugare).permit(:nombre, :descripcion, :cont_n1, :cont_v1, :cont_n2, :cont_v2, :cont_n3, :cont_v3, :cont_n4, :cont_v4)
     end
 end

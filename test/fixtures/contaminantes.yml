@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  descripcion: MyString
+  nivel: 9.99
+  lugare: one
+
+two:
+  nombre: MyString
+  descripcion: MyString
+  nivel: 9.99
+  lugare: two

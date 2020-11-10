@@ -21,6 +21,36 @@
     <%= form.text_field :descripcion %>
   </div>
 
+  <div class="field">
+    <%= form.label :cont_n1, 'Nombre del contaminante:' %>
+    <%= form.text_field :cont_n1 %>
+    <%= form.label :cont_v1, 'Valor:' %>
+    <%= form.number_field :cont_v1, :step => 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cont_n2, 'Nombre del contaminante:' %>
+    <%= form.text_field :cont_n2 %>
+    <%= form.label :cont_v2, 'Valor:' %>
+    <%= form.number_field :cont_v2, :step => 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cont_n3, 'Nombre del contaminante:' %>
+    <%= form.text_field :cont_n3 %>
+    <%= form.label :cont_v3, 'Valor:' %>
+    <%= form.number_field :cont_v3, :step => 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cont_n4, 'Nombre del contaminante:' %>
+    <%= form.text_field :cont_n4 %>
+    <%= form.label :cont_v4, 'Valor:' %>
+    <%= form.number_field :cont_v4, :step => 0.01 %>
+  </div>
+
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

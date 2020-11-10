@@ -1,0 +1,37 @@
+<%= form_with(model: contaminante, local: true) do |form| %>
+  <% if contaminante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contaminante.errors.count, "error") %> prohibited this contaminante from being saved:</h2>
+
+      <ul>
+        <% contaminante.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nivel %>
+    <%= form.text_field :nivel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lugare_id %>
+    <%= form.text_field :lugare_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

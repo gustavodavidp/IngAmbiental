@@ -28,5 +28,19 @@
   <%= @lugare.descripcion %>
 </p>
 
+<p>
+  <strong>Plomo en Gasolina:</strong>
+  <%= @lugare.cont_v1 %>
+</p>
+
+<p>
+  <strong>Vehículos con Motor Diésel (antes 1998):</strong>
+  <%= @lugare.cont_v3 %>
+</p>
+
+<p>
+  <strong>Vehículos con Motor Diésel (posterior 1999):</strong>
+  <%= @lugare.cont_v4 %>
+</p>
 <%= link_to 'Edit', edit_lugare_path(@lugare) %> |
 <%= link_to 'Back', lugares_path %>

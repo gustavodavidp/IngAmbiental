@@ -1,0 +1,3 @@
+class Contaminante < ApplicationRecord
+  
+end
