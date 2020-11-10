@@ -18,29 +18,30 @@
     <script src="../bthed/js/custom.js"></script>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
+<h2 class="text-center">
+  <strong>Destino:</strong>
   <%= @lugare.nombre %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
+</h2>
+<br><br>
+<h5 class="text-left text-justify ml-5 pl-5">
+  <strong>Descripción:</strong>
   <%= @lugare.descripcion %>
-</p>
+</h5>
+<br><br>
+<h5 class="text-left text-justify ml-5 pl-5">
+  <strong>Nivel de Polución:</strong>
+  <div class="alert alert-success" role="alert">
+    ¡El nivel de polución es óptimo!
+  </div>
+</h5>
+<br><br>
+<div class="text-center">
+  <%= image_tag 'ecology.jpg' %>
+</div>
 
-<p>
-  <strong>Plomo en Gasolina:</strong>
-  <%= @lugare.cont_v1 %>
-</p>
-
-<p>
-  <strong>Vehículos con Motor Diésel (antes 1998):</strong>
-  <%= @lugare.cont_v3 %>
-</p>
-
-<p>
-  <strong>Vehículos con Motor Diésel (posterior 1999):</strong>
-  <%= @lugare.cont_v4 %>
-</p>
-<%= link_to 'Edit', edit_lugare_path(@lugare) %> |
-<%= link_to 'Back', lugares_path %>
+<div class="container mb-5">
+  <% if user_signed_in?  %>
+    <%= link_to 'Editar', edit_lugare_path(@lugare), class: "btn btn-warning" %> |
+  <% end  %>
+  <%= link_to 'Regresar', root_path, class: "btn btn-primary" %>
+</div>
