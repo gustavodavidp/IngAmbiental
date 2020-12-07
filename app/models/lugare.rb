@@ -12,15 +12,15 @@ class Lugare < ApplicationRecord
         dioxidonitrogeno = self.cont_v4
         ozono = self.cont_v5
 
-        if (mpr > 50 ) && ( mpr < 150) && (dioxidoazufre > 80 ) && (dioxidoazufre > 365 ) &6
-            (monoxidocarb > 10000 ) && (monoxidocarb < 30000) && (dioxidonitrogeno > 100) && 
-            (dioxidonitrogeno < 150) && (ozono > 150) && (ozono <230)
+        if (mpr >= 355  ) && (dioxidoazufre >= 812.2 ) &6
+            (monoxidocarb > 17800 ) && (dioxidonitrogeno > 1222) && 
+            (ozono > 402)
+            return 3
+        elsif ( mpr < 150) && (dioxidoazufre < 365 ) && (monoxidocarb < 10000) && 
+            (dioxidonitrogeno < 150) && (ozono <235)
             return 1
-        elsif ( mpr < 150) && (dioxidoazufre > 365 ) && (monoxidocarb < 30000) && 
-            (dioxidonitrogeno < 150) && (ozono <230)
-            return 2
         else
-            return 3 
+            return 2 
         end
     end
 end
