@@ -20,12 +20,12 @@
 
 <h2 class="text-center">
   <strong>Destino:</strong>
-  <%= @lugare.nombre %>
+  <%= @lugare.nombre if not @lugare.nombre.nil? %>
 </h2>
 <br><br>
 <h5 class="text-left text-justify ml-5 pl-5">
   <strong>Descripción:</strong>
-  <%= @lugare.descripcion %>
+  <%= @lugare.descripcion if not @lugare.descripcion.nil? %>
 </h5>
 <br><br>
 <% if @lugare.peligrosidad == 1  %>
