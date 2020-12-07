@@ -1,3 +1,21 @@
+ <!-- CSS FILES START -->
+    <link href="../bthed/css/custom.css" rel="stylesheet">
+    <link href="../bthed/css/color.css" rel="stylesheet">
+    <link href="../bthed/css/responsive.css" rel="stylesheet">
+    <link href="../bthed/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="../bthed/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bthed/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../bthed/css/all.min.css" rel="stylesheet">
+    <!-- CSS FILES End -->
+  <!--   JS Files Start  --> 
+    <script src="../bthed/js/jquery-3.3.1.min.js"></script> 
+    <script src="../bthed/js/jquery-migrate-1.4.1.min.js"></script> 
+    <script src="../bthed/js/popper.min.js"></script> 
+    <script src="../bthed/js/bootstrap.min.js"></script> 
+    <script src="../bthed/js/owl.carousel.min.js"></script> 
+    <script src="../bthed/js/jquery.prettyPhoto.js"></script> 
+    <script src="../bthed/js/isotope.min.js"></script> 
+    <script src="../bthed/js/custom.js"></script>
 <%= form_with(model: lugare, local: true) do |form| %>
   <% if lugare.errors.any? %>
     <div id="error_explanation">
@@ -10,48 +28,56 @@
       </ul>
     </div>
   <% end %>
+  <div class="text-center">
+    <div class="field">
+      <%= form.label :nombre %>
+      <%= form.text_field :nombre %>
+    </div>
 
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
-  </div>
+    <div class="field">
+      <%= form.label :descripcion %>
+      <%= form.text_field :descripcion %>
+    </div>
 
-  <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_field :descripcion %>
-  </div>
+    <div class="field">
+      <%= form.label :cont_n1, 'Nombre del contaminante:' %>
+      <%= form.text_field :cont_n1 %>
+      <%= form.label :cont_v1, 'Valor:' %>
+      <%= form.number_field :cont_v1, :step => 0.01 %>
+    </div>
 
-  <div class="field">
-    <%= form.label :cont_n1, 'Nombre del contaminante:' %>
-    <%= form.text_field :cont_n1 %>
-    <%= form.label :cont_v1, 'Valor:' %>
-    <%= form.number_field :cont_v1, :step => 0.01 %>
-  </div>
+    <div class="field">
+      <%= form.label :cont_n2, 'Nombre del contaminante:' %>
+      <%= form.text_field :cont_n2 %>
+      <%= form.label :cont_v2, 'Valor:' %>
+      <%= form.number_field :cont_v2, :step => 0.01 %>
+    </div>
 
-  <div class="field">
-    <%= form.label :cont_n2, 'Nombre del contaminante:' %>
-    <%= form.text_field :cont_n2 %>
-    <%= form.label :cont_v2, 'Valor:' %>
-    <%= form.number_field :cont_v2, :step => 0.01 %>
-  </div>
+    <div class="field">
+      <%= form.label :cont_n3, 'Nombre del contaminante:' %>
+      <%= form.text_field :cont_n3 %>
+      <%= form.label :cont_v3, 'Valor:' %>
+      <%= form.number_field :cont_v3, :step => 0.01 %>
+    </div>
 
-  <div class="field">
-    <%= form.label :cont_n3, 'Nombre del contaminante:' %>
-    <%= form.text_field :cont_n3 %>
-    <%= form.label :cont_v3, 'Valor:' %>
-    <%= form.number_field :cont_v3, :step => 0.01 %>
-  </div>
+    <div class="field">
+      <%= form.label :cont_n4, 'Nombre del contaminante:' %>
+      <%= form.text_field :cont_n4 %>
+      <%= form.label :cont_v4, 'Valor:' %>
+      <%= form.number_field :cont_v4, :step => 0.01 %>
+    </div>
 
-  <div class="field">
-    <%= form.label :cont_n4, 'Nombre del contaminante:' %>
-    <%= form.text_field :cont_n4 %>
-    <%= form.label :cont_v4, 'Valor:' %>
-    <%= form.number_field :cont_v4, :step => 0.01 %>
-  </div>
+    <div class="field">
+      <%= form.label :cont_n5, 'Nombre del contaminante:' %>
+      <%= form.text_field :cont_n5 %>
+      <%= form.label :cont_v5, 'Valor:' %>
+      <%= form.number_field :cont_v5, :step => 0.01 %>
+    </div>
 
 
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

@@ -1,4 +1,4 @@
-<h1>Lugares</h1>
+<h1 class="text-center h1">Lugares</h1>
 <div class="text-center">
   <div class="form-group ml-5 mr-5 ">
       <div class="row d-flex justify-content-center">
@@ -12,28 +12,31 @@
       </div>
   </div>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="text-center">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @lugares.each do |lugare| %>
-      <tr>
-        <td><%= lugare.nombre %></td>
-        <td><%= lugare.descripcion %></td>
-        <td><%= link_to 'Show', lugare %></td>
-        <td><%= link_to 'Edit', edit_lugare_path(lugare) %></td>
-        <td><%= link_to 'Destroy', lugare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @lugares%>
-<br>
-
-<%= link_to 'New Lugare', new_lugare_path %>
+      <tbody>
+        <% @lugares.each do |lugare| %>
+          <tr>
+            <td><%= lugare.nombre %></td>
+            <td><%= lugare.descripcion %></td>
+            <td><%= link_to 'Mostrar', lugare, class: 'btn btn-info' %></td>
+            <td><%= link_to 'Editar', edit_lugare_path(lugare), class: 'btn btn-warning' %></td>
+            <td><%= link_to 'Destroy', lugare, class: 'btn btn-danger',method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @lugares%>
+    <br>
+    <%= link_to 'Añadir nuevo destino', new_lugare_path, class: 'btn btn-success mb-5' %>
+  </div>
+</div>

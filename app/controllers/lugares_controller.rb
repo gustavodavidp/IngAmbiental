@@ -67,9 +67,13 @@ class LugaresController < ApplicationController
 
   private
     def require_admin_params!
+      if user_signed_in?
         unless current_user.admin == true
             redirect_to root_path, status: 401
         end
+      else
+        false
+      end
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_lugare
